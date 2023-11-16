@@ -1,21 +1,64 @@
-<!DOCTYPE html>
+---
+layout: base.html
+title: Home Page
+site: CPSC 349 - Project 3
+---
 
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>js document</title>
-    <link rel="stylesheet" href="https://unpkg.com/mvp.css"> 
-  </head>
-  <body>
-    <header>
-      <h1>Home</h1>
-    </header>
-    <footer>
-      <small>
-        <a href="https://www.pexels.com">Photos provided by Pexels</a>
-      </small>
-    </footer>
-  </body>
-</html>
+<style>
+  .Container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); 
+    gap: 20px; 
+  }
+  .Container .column {
+    width: 100%; 
+  }
+  .Container img {
+    width: 100%; 
+    display: block; 
+    transition: opacity 0.3s ease; 
+    margin-bottom: 20px; 
+  }
+  .Container img:hover {
+    opacity: 0.7; 
+  }
+  .Name{
+    visibility: hidden;
+  }
+
+  .Name:hover{
+visibility: visible;
+  }
+</style>
+
+<div class = "Container"">
+  <div class="column">
+    {% for photo in photos.0apgfsq.media %}
+      <img src="{{ photo.src.tiny }}" alt="{{ photo.alt }}">
+    {% endfor %}
+  </div>
+
+  <div class="column">
+    {% for photo in photos.xs9vlnz.media %}
+      <img src="{{ photo.src.tiny }}" alt="{{ photo.alt }}">
+    {% endfor %}
+  </div>
+
+  <div class="column">
+    {% for photo in photos.sf1rygk.media %}
+      <img src="{{ photo.src.tiny }}" alt="{{ photo.alt }}">
+    {% endfor %}
+  </div>
+
+  <div class="column">
+    {% for photo in photos.sjwy6vz.media %}
+      <img src="{{ photo.src.tiny }}" alt="{{ photo.alt }}">
+    {% endfor %}
+  </div>
+
+  <div class="column">
+    {% for photo in photos.obz4udy.media %}
+      <img src="{{ photo.src.tiny }}" alt="{{ photo.alt }}">
+    {% endfor %}
+  </div>
+</div>

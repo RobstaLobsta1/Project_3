@@ -4,4 +4,5 @@ module.exports = function (eleventyConfig) {
     notify: true,
     open: true,
   });
+  eleventyConfig.addPassthroughCopy("./src/_data");
 };
