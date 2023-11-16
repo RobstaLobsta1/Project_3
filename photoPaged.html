@@ -9,6 +9,6 @@ pagination:
 ---
 {%- for photo in pagination.items %}
 <div class="Container">
-  <img src="{{ src.photo.large }}" alt="{{photo.alt}}" />
+  <img src="{{ photo.src.large }}" alt="{{photo.alt}}" />
 </div>
 {% endfor -%}
