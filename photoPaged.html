@@ -7,8 +7,35 @@ pagination:
   size: 1
   permalink: "photos/{% if pagination.pageNumber>1 %}page-{{ pagination.pageNumber | plus: 1 }}{% endif %}/index.html"
 ---
+
+<style>
+  .Container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; 
+  }
+
+  .Container img {
+    max-width: 100%;
+    max-height: 80vh; 
+    display: block;
+    margin: 0 auto; 
+  }
+
+  .About {
+    margin-bottom: 20px; 
+    text-align: center;
+    font-size: 16px;
+  }
+</style>
+
 {%- for photo in pagination.items %}
 <div class="Container">
+  <div class ="About">
+    {{photo.photographer}}
+  </div>
   <img src="{{ photo.src.large }}" alt="{{photo.alt}}" />
 </div>
 {% endfor -%}

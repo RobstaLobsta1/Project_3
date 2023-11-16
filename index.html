@@ -2,13 +2,14 @@
 layout: base.html
 title: Home Page
 site: CPSC 349 - Project 3
+collection: We Love Music
 ---
 
 <style>
   .Container {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 20px;
+    gap: 10px;
   }
   .Container .column {
     width: 100%;
@@ -17,10 +18,10 @@ site: CPSC 349 - Project 3
     width: 100%;
     display: block;
     transition: opacity 0.3s ease;
-    margin-bottom: 20px;
+    margin-bottom: 10px;
   }
   .Container img:hover {
-    opacity: 0.7;
+    opacity: 0.4;
   }
   .Name {
     visibility: hidden;
@@ -32,13 +33,13 @@ site: CPSC 349 - Project 3
 </style>
 
 <div class="Container">
-  <div class="column">
-    {% for photo in photos.0apgfsq.media %}
-    <div class="image-container">
-      <a href="{% if forloop.first %}/photoPaged{% else %}/photoPaged/{{ forloop.index0 }}{% endif %}">
-        <img src="{{ photo.src.tiny }}" alt="{{ photo.alt }}" />
-      </a>
-    </div>
-    {% endfor %}
+  {% for photo in photos.0apgfsq.media %}
+  <div class="image-container">
+    <a
+      href="{% if forloop.first %}/photoPaged{% else %}/photoPaged/{{ forloop.index0 }}{% endif %}"
+    >
+      <img src="{{ photo.src.tiny }}" alt="{{ photo.alt }}" />
+    </a>
   </div>
+  {% endfor %}
 </div>
