@@ -7,58 +7,38 @@ site: CPSC 349 - Project 3
 <style>
   .Container {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); 
-    gap: 20px; 
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
   }
   .Container .column {
-    width: 100%; 
+    width: 100%;
   }
   .Container img {
-    width: 100%; 
-    display: block; 
-    transition: opacity 0.3s ease; 
-    margin-bottom: 20px; 
+    width: 100%;
+    display: block;
+    transition: opacity 0.3s ease;
+    margin-bottom: 20px;
   }
   .Container img:hover {
-    opacity: 0.7; 
+    opacity: 0.7;
   }
-  .Name{
+  .Name {
     visibility: hidden;
   }
 
-  .Name:hover{
-visibility: visible;
+  .Name:hover {
+    visibility: visible;
   }
 </style>
 
-<div class = "Container"">
+<div class="Container">
   <div class="column">
     {% for photo in photos.0apgfsq.media %}
-      <img src="{{ photo.src.tiny }}" alt="{{ photo.alt }}">
-    {% endfor %}
-  </div>
-
-  <div class="column">
-    {% for photo in photos.xs9vlnz.media %}
-      <img src="{{ photo.src.tiny }}" alt="{{ photo.alt }}">
-    {% endfor %}
-  </div>
-
-  <div class="column">
-    {% for photo in photos.sf1rygk.media %}
-      <img src="{{ photo.src.tiny }}" alt="{{ photo.alt }}">
-    {% endfor %}
-  </div>
-
-  <div class="column">
-    {% for photo in photos.sjwy6vz.media %}
-      <img src="{{ photo.src.tiny }}" alt="{{ photo.alt }}">
-    {% endfor %}
-  </div>
-
-  <div class="column">
-    {% for photo in photos.obz4udy.media %}
-      <img src="{{ photo.src.tiny }}" alt="{{ photo.alt }}">
+    <div class="image-container">
+      <a href="{% if forloop.first %}/photoPaged{% else %}/photoPaged/{{ forloop.index0 }}{% endif %}">
+        <img src="{{ photo.src.tiny }}" alt="{{ photo.alt }}" />
+      </a>
+    </div>
     {% endfor %}
   </div>
 </div>

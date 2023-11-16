@@ -1,14 +1,14 @@
 ---
 layout: base.html
 title: Photo Paged
+site: CPSC 349 - Project 3
 pagination:
-  data: photoList.photo
+  data: photos.0apgfsq.media
   size: 1
+  permalink: "photos/{% if pagination.pageNumber>1 %}page-{{ pagination.pageNumber | plus: 1 }}{% endif %}/index.html"
 ---
-
-<h1>Hello</h1>
-<ol>
-  {%- for photo in pagination.items %}
-  <li>{{photo}}</li>
-  {% endfor -%}
-</ol>
+{%- for photo in pagination.items %}
+<div class="Container">
+  <img src="{{ src.photo.large }}" alt="{{photo.alt}}" />
+</div>
+{% endfor -%}
