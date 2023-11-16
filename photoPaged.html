@@ -1,0 +1,14 @@
+---
+layout: base.html
+title: Photo Paged
+pagination:
+  data: photoList.photo
+  size: 1
+---
+
+<h1>Hello</h1>
+<ol>
+  {%- for photo in pagination.items %}
+  <li>{{photo}}</li>
+  {% endfor -%}
+</ol>
