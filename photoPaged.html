@@ -31,18 +31,27 @@ pagination:
     font-size: 50px;
   }
 
-.controls {
-  display: flex;
-  justify-content: center;
-}
+  .controls {
+    display: flex;
+    justify-content: center;
+  }
 
-.controls > * {
-  padding: 10px;
-}
+  .controls > * {
+    padding: 10px;
+  }
+
+  #top {
+    margin-top: -20%;
+    margin-bottom: -3%;
+  }
+
+  #bottom {
+    margin-bottom: -8%;
+  }
 
 </style>
 
-<nav class="controls">
+<nav class="controls" id="top">
   {% if pagination.href.previous %}<a href="{{pagination.href.previous}}"><strong>Previous Page</strong></a>{% endif %}
   {% if pagination.href.next %}<a href="{{pagination.href.next}}"><strong>Next Page</strong></a>{% endif %}
 </nav>
@@ -57,7 +66,7 @@ pagination:
 </div>
 {% endfor -%}
 
-<section class="controls">
+<section class="controls" id="bottom">
   {% if pagination.href.previous %}<a href="{{pagination.href.previous}}"><strong>Previous Page</strong></a>{% endif %}
   {% if pagination.href.next %}<a href="{{pagination.href.next}}"><strong>Next Page</strong></a>{% endif %}
 </section>
