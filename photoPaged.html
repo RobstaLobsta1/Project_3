@@ -30,7 +30,23 @@ pagination:
     text-align: center;
     font-size: 50px;
   }
+
+.controls {
+  display: flex;
+  justify-content: center;
+}
+
+.controls > * {
+  padding: 10px;
+}
+
 </style>
+
+<nav class="controls">
+  {% if pagination.href.previous %}<a href="{{pagination.href.previous}}"><strong>Previous Page</strong></a>{% endif %}
+  {% if pagination.href.next %}<a href="{{pagination.href.next}}"><strong>Next Page</strong></a>{% endif %}
+</nav>
+
 
 {%- for photo in pagination.items %}
 <div class="Container">
@@ -40,3 +56,8 @@ pagination:
   <img src="{{ photo.src.large }}" alt="{{photo.alt}}" />
 </div>
 {% endfor -%}
+
+<section class="controls">
+  {% if pagination.href.previous %}<a href="{{pagination.href.previous}}"><strong>Previous Page</strong></a>{% endif %}
+  {% if pagination.href.next %}<a href="{{pagination.href.next}}"><strong>Next Page</strong></a>{% endif %}
+</section>
