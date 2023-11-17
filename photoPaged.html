@@ -28,7 +28,7 @@ pagination:
   .About {
     margin-bottom: 20px; 
     text-align: center;
-    font-size: 50px;
+    font-size: 35px;
   }
 
   .controls {
@@ -61,6 +61,9 @@ pagination:
 <div class="Container">
   <div class ="About">
     {{photo.photographer}}
+    <br>
+    <p>ID:{{photo.photographer_id}}</p>
+    <a href= "{{photo.photographer_url}}"><p>More of my work</p></a>
   </div>
   <img src="{{ photo.src.large }}" alt="{{photo.alt}}" />
 </div>
