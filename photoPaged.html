@@ -42,11 +42,10 @@ pagination:
 
   #top {
     margin-top: -20%;
-    margin-bottom: -3%;
   }
 
   #bottom {
-    margin-bottom: -8%;
+    margin-top: 8%;
   }
 
 </style>
@@ -66,8 +65,11 @@ pagination:
     <a href= "{{photo.photographer_url}}"><p>More of my work</p></a>
   </div>
   <img src="{{ photo.src.large }}" alt="{{photo.alt}}" />
+  <section>{{photo.alt}}</section>
 </div>
 {% endfor -%}
+
+<br>
 
 <section class="controls" id="bottom">
   {% if pagination.href.previous %}<a href="{{pagination.href.previous}}"><strong>Previous Page</strong></a>{% endif %}
