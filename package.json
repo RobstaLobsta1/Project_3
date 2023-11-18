@@ -5,7 +5,7 @@
   "description": "CPSC 349 - Project 1",
   "scripts": {
     "start": "eleventy --serve --config=.eleventy.cjs",
-    "build": "eleventy"
+    "build": "npx @11ty/eleventy"
   },
   "license": "UNLICENSED",
   "private": true,
